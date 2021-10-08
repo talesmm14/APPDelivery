@@ -7,11 +7,28 @@
 
 import UIKit
 
-class ProdutosViewController: UIViewController {
+class ProdutosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let  cell = UITableViewCell()
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let produtos = storyboard?.instantiateViewController(identifier: "produtoId")
+        
+        if(produtos != nil){
+            self.navigationController?.pushViewController(produtos!, animated: true)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Produtos"
         // Do any additional setup after loading the view.
     }
     

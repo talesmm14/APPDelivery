@@ -9,6 +9,16 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBAction func realizaLogin(_ sender: Any) {
+        if(true){
+            let tabBar = storyboard?.instantiateViewController(identifier: "tabBarId")
+            if (tabBar != nil){
+                tabBar?.modalPresentationStyle = .fullScreen
+                tabBar?.modalTransitionStyle = .flipHorizontal
+                self.present(tabBar!, animated: true, completion: nil)
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
