@@ -8,6 +8,10 @@
 import UIKit
 
 class ProdutoViewController: UIViewController {
+    
+    let produto:Produto! = nil
+    
+    
     @IBAction func adicionarCarrinho(_ sender: Any) {
         let carrinho = storyboard?.instantiateViewController(identifier: "carrinhoId")
         if (carrinho != nil){

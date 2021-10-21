@@ -8,22 +8,30 @@
 import UIKit
 
 class ProdutosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var produtos:[Produto]!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return self.produtos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let  cell = UITableViewCell()
+        
+        let cell:ProdutosCell = tableView.dequeueReusableCell(withIdentifier: "produtosIdCell") as! ProdutosCell
         cell.selectionStyle = .none
+        cell.nome.text = produtos[indexPath.row].name
+        cell.descricao.text = produtos[indexPath.row].descricao
+        cell.categoria.text = produtos[indexPath.row].categoria
+        cell.preco.text = produtos[indexPath.row].preco
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let produtos = storyboard?.instantiateViewController(identifier: "produtoId")
+        let produtoView:ProdutoViewController = storyboard?.instantiateViewController(identifier: "produtoIdController") as! ProdutoViewController
+        let produto = produtos[indexPath.row]
         
-        if(produtos != nil){
-            self.navigationController?.pushViewController(produtos!, animated: true)
-        }
+        self.navigationController?.pushViewController(produtoView, animated: true)
+        
     }
 
     override func viewDidLoad() {

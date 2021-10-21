@@ -9,22 +9,26 @@ import UIKit
 
 class EstabelecimentosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var estabelecimentos:[Estabelecimento]!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return self.estabelecimentos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let  cell = UITableViewCell()
+        let  cell = tableView.dequeueReusableCell(withIdentifier: "estabalecimentoID") as! EstabelecimentoCell
         cell.selectionStyle = .none
+        cell.nome.text = estabelecimentos[indexPath.row].name
+        cell.telefone.text = estabelecimentos[indexPath.row].telefone
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let produtos = storyboard?.instantiateViewController(identifier: "produtosId")
+        let viewC:ProdutosViewController = storyboard?.instantiateViewController(identifier: "produtosIdController") as! ProdutosViewController
+        viewC.produtos = estabelecimentos[indexPath.row].produtos
         
-        if(produtos != nil){
-            self.navigationController?.pushViewController(produtos!, animated: true)
-        }
+        self.navigationController?.pushViewController(viewC, animated: true)
+        
     }
     
     
@@ -32,6 +36,9 @@ class EstabelecimentosViewController: UIViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Estabelecimentos"
+        let repository = Repository.createRepository()
+        repository.initRepository()
+        self.estabelecimentos = repository.estabelecimentos
         // Do any additional setup after loading the view.
     }
     

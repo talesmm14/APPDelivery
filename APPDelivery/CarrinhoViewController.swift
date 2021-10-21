@@ -30,7 +30,7 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let produtos = storyboard?.instantiateViewController(identifier: "produtoId")
+        let produtos = storyboard?.instantiateViewController(identifier: "produtoIdController")
         
         if(produtos != nil){
             self.navigationController?.pushViewController(produtos!, animated: true)
