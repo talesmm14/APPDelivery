@@ -9,7 +9,11 @@ import UIKit
 
 class ProdutoViewController: UIViewController {
     
-    let produto:Produto! = nil
+    @IBOutlet weak var nome: UILabel!
+    @IBOutlet weak var categoria: UILabel!
+    @IBOutlet weak var preco: UILabel!
+    @IBOutlet weak var descricao: UILabel!
+    var produto:Produto!
     
     
     @IBAction func adicionarCarrinho(_ sender: Any) {
@@ -24,6 +28,10 @@ class ProdutoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Produto x"
+        self.nome.text = produto.name
+        self.descricao.text = produto.descricao
+        self.preco.text = produto.preco
+        self.categoria.text = produto.categoria
         // Do any additional setup after loading the view.
     }
     

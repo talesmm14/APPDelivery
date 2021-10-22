@@ -30,6 +30,8 @@ class ProdutosViewController: UIViewController, UITableViewDelegate, UITableView
         let produtoView:ProdutoViewController = storyboard?.instantiateViewController(identifier: "produtoIdController") as! ProdutoViewController
         let produto = produtos[indexPath.row]
         
+        produtoView.produto = produto
+        
         self.navigationController?.pushViewController(produtoView, animated: true)
         
     }
