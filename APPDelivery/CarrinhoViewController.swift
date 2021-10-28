@@ -8,33 +8,22 @@
 import UIKit
 
 class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var carrinho = Carrinho.createCarrinho()
+    
     @IBAction func finalizarCarrinho(_ sender: Any) {
-        if(true){
-            let tabBar = storyboard?.instantiateViewController(identifier: "tabBarId")
-            if (tabBar != nil){
-                tabBar?.modalPresentationStyle = .fullScreen
-                tabBar?.modalTransitionStyle = .flipHorizontal
-                self.present(tabBar!, animated: true, completion: nil)
-            }
-        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return carrinho.produtos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let  cell = UITableViewCell()
-        cell.selectionStyle = .none
+        let  cell:CarrinhoProdutoCell = tableView.dequeueReusableCell(withIdentifier: "itemCarrinhoID") as! CarrinhoProdutoCell
+        cell.nome.text = carrinho.produtos[indexPath.row].name
+        cell.preco.text = carrinho.produtos[indexPath.row].preco
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let produtos = storyboard?.instantiateViewController(identifier: "produtoIdController")
-        
-        if(produtos != nil){
-            self.navigationController?.pushViewController(produtos!, animated: true)
-        }
     }
     
     override func viewDidLoad() {

@@ -17,11 +17,17 @@ class ProdutoViewController: UIViewController {
     
     
     @IBAction func adicionarCarrinho(_ sender: Any) {
-        let carrinho = storyboard?.instantiateViewController(identifier: "carrinhoId")
-        if (carrinho != nil){
-            carrinho?.modalPresentationStyle = .fullScreen
-            carrinho?.modalTransitionStyle = .flipHorizontal
-            self.present(carrinho!, animated: true, completion: nil)
+        let carrinho:Carrinho = Carrinho.createCarrinho()
+        
+        let msg:String = carrinho.inserirProduto(produto:produto)
+        
+        let alertController = UIAlertController(title:"Informação", message: msg, preferredStyle: .alert)
+        
+        let voltar = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+        
+        alertController.addAction(voltar)
+        self.present(alertController, animated: true) {
+            
         }
     }
     

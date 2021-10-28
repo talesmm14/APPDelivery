@@ -25,6 +25,7 @@
 		57A4066E2718E755004279D6 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4066D2718E755004279D6 /* Usuario.swift */; };
 		57A406712718E9B6004279D6 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A406702718E9B6004279D6 /* DataSource.swift */; };
 		57A406752718F169004279D6 /* EstabelecimentoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A406742718F169004279D6 /* EstabelecimentoCell.swift */; };
+		57F8E859272B6032005D5483 /* CarrinhoProdutoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F8E858272B6032005D5483 /* CarrinhoProdutoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		57A4066D2718E755004279D6 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		57A406702718E9B6004279D6 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		57A406742718F169004279D6 /* EstabelecimentoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstabelecimentoCell.swift; sourceTree = "<group>"; };
+		57F8E858272B6032005D5483 /* CarrinhoProdutoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoProdutoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				57A406702718E9B6004279D6 /* DataSource.swift */,
 				57A406742718F169004279D6 /* EstabelecimentoCell.swift */,
 				57359D70272229A20017A304 /* ProdutosCell.swift */,
+				57F8E858272B6032005D5483 /* CarrinhoProdutoCell.swift */,
 			);
 			path = APPDelivery;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				576ED6B727067DF10095453C /* ViewController.swift in Sources */,
 				570E1E25270FBB1300ED8129 /* ProdutosViewController.swift in Sources */,
 				570E1E2B270FC6D100ED8129 /* CarrinhoViewController.swift in Sources */,
+				57F8E859272B6032005D5483 /* CarrinhoProdutoCell.swift in Sources */,
 				576ED6B327067DF10095453C /* AppDelegate.swift in Sources */,
 				576ED6B527067DF10095453C /* SceneDelegate.swift in Sources */,
 				57A4066E2718E755004279D6 /* Usuario.swift in Sources */,
